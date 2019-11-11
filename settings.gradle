@@ -1,0 +1,1 @@
+include ':app', ':moudlea', ':commonmodule', ':smart_router_annotion', ':smart_router_compile', ':smart_router'

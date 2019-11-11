@@ -1,0 +1,20 @@
+import org.gradle.internal.jvm.Jvm
+
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':smart_router_annotion')
+    implementation 'com.google.auto.service:auto-service:1.0-rc4'
+    implementation 'com.squareup:javapoet:1.11.1'
+    compileOnly files(Jvm.current().getToolsJar())
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+//指定编译的编码
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
